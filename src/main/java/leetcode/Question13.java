@@ -1,49 +1,30 @@
 package leetcode;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @Author: wangyaowy.wang
- * @Date 2019/3/13 12:23
+ * @Date 2019/3/15 19:43
  *
- * 编写一个函数来查找字符串数组中的最长公共前缀。
- *
- * 如果不存在公共前缀，返回空字符串 ""。
- *
- * 示例 1:
- *
- * 输入: ["flower","flow","flight"]
- * 输出: "fl"
- * 示例 2:
- *
- * 输入: ["dog","racecar","car"]
- * 输出: ""
- * 解释: 输入不存在公共前缀。
- * 说明:
- *
- * 所有输入只包含小写字母 a-z 。
+ * 罗马数字转整数
  */
 public class Question13 {
+    public int romanToInt(String s) {
+        int[] nums=new int[]{1000,500,100,50,10,5,1};
+        List<Character> roman= Arrays.asList('M','D','C','L','X','V','I');
+        int sum=0;
+        int length=s.length();
+        for (int i=0;i<length;i++){
+            char c=s.charAt(i);
+            int index=roman.indexOf(c);
+            sum+=nums[index];
 
-    public String longestCommonPrefix(String[] strs) {
-        if(strs.length==0) return "";
-        int max=strs[0].length();
-        String maxStr=strs[0];
-        for (String str:strs){
-            if(max==0||str.length()==0) return "";
-            int index=0;
-            while(index<maxStr.length()&&index<str.length()){
-                if(str.charAt(index)!=maxStr.charAt(index)){
-                    maxStr=maxStr.substring(0,index);
-                    max=index;
-                    break;
-                }
-                index++;
-                if(index==str.length()){
-                    maxStr=maxStr.substring(0,index);
-                    max=index;
-                }
+            if (i+1!=length && roman.indexOf(s.charAt(i+1))<index ){
+                sum-= 2*nums[index];
             }
         }
 
-        return maxStr;
+        return sum;
     }
 }
