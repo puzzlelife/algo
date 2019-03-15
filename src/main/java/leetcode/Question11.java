@@ -7,7 +7,7 @@ package leetcode;
  *
  * 说明：你不能倾斜容器，且 n 的值至少为 2。
  */
-public class question11 {
+public class Question11 {
     public int maxArea(int[] height) {
         int area=0,left=0,right=height.length-1;
 

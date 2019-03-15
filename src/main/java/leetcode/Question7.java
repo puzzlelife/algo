@@ -20,7 +20,7 @@ package leetcode;
  * 输出: 21
  * 注意:
  */
-public class question7 {
+public class Question7 {
     public int reverse(int x) {
         String max=String.valueOf(Integer.MAX_VALUE);
         boolean isNegative=false;

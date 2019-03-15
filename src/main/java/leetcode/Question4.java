@@ -24,7 +24,7 @@ package leetcode;
  * 则中位数是 (2 + 3)/2 = 2.5
  *
  */
-public class question4 {
+public class Question4 {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int l1=nums1.length,l2=nums2.length;
         int nums[]=new int[l1+l2];

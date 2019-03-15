@@ -21,7 +21,7 @@ package leetcode;
  *
  * 所有输入只包含小写字母 a-z 。
  */
-public class question13 {
+public class Question13 {
 
     public String longestCommonPrefix(String[] strs) {
         if(strs.length==0) return "";

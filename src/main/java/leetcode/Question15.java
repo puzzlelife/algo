@@ -19,7 +19,7 @@ import java.util.List;
  *   [-1, -1, 2]
  * ]
  */
-public class question15 {
+public class Question15 {
     public List<List<Integer>> threeSum(int[] nums) {
 
         int length=nums.length;

@@ -16,7 +16,7 @@ package leetcode;
  * 输入: "cbbd"
  * 输出: "bb"
  */
-public class question5 {
+public class Question5 {
     public String longestPalindrome(String s) {
         int max=0;
         String maxString="";

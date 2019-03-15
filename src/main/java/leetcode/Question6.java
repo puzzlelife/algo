@@ -31,7 +31,7 @@ package leetcode;
  * E C   I H   N
  * T     S     G
  */
-public class question6 {
+public class Question6 {
     public String convert(String s, int numRows) {
         if (numRows==1){
             return s;

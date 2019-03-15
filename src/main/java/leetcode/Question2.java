@@ -18,7 +18,7 @@ package leetcode;
  * 输出：7 -> 0 -> 8
  * 原因：342 + 465 = 807
  */
-public class question2 {
+public class Question2 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int carry=0;
         ListNode result=new ListNode(0);
