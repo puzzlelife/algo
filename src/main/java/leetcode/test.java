@@ -1,16 +1,18 @@
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * @Author: wangyaowy.wang
  * @Date 2019/3/14 23:46
  */
 public class test {
     public static void main(String[] args) {
-        Question42 test=new Question42();
+        Question18 test=new Question18();
 
-        int[] nums=new int[]{0,1,0,2,1,0,1,3,2,1,2,1};
+        int[] nums=new int[]{0,1,5,0,1,5,5,-4};
 
-        int sum=test.trap(nums);
-        System.out.println(sum);
+
+        System.out.println(test.fourSum(nums,11));
     }
 }

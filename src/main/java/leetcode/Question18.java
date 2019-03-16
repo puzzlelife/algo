@@ -6,28 +6,15 @@ import java.util.List;
 
 /**
  * @Author: wangyaowy.wang
- * @Date 2019/3/13 19:31
- *
- * 给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。
- *
- * 注意：答案中不可以包含重复的三元组。
- *
- * 例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]，
- *
- * 满足要求的三元组集合为：
- * [
- *   [-1, 0, 1],
- *   [-1, -1, 2]
- * ]
+ * @Date 2019/3/16 12:00
  */
-public class Question15 {
-    public List<List<Integer>> threeSum(int[] nums) {
-        int sum=0;
+public class Question18 {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> lists=new ArrayList<>();
         boolean flag=false;
         int length=nums.length;
 
-        if (length<3) return lists;
+        if (length<4) return lists;
 
         for (int i=0;i<length-1;i++){
             if (nums[i]!=nums[i+1]){
@@ -36,8 +23,8 @@ public class Question15 {
             }
         }
         if (!flag){
-            if (nums[0]*3==sum){
-                lists.add(Arrays.asList(nums[0],nums[0],nums[0]));
+            if (nums[0]*4==target){
+                lists.add(Arrays.asList(nums[0],nums[0],nums[0],nums[0]));
             }
             return lists;
         }
@@ -45,6 +32,7 @@ public class Question15 {
 
 
         Arrays.sort(nums);
+
         for (int i=0;i<length;i++){
             if (i>0 && nums[i]==nums[i-1]){
                 continue;
@@ -53,10 +41,17 @@ public class Question15 {
                 if (j>i+1&&nums[j]==nums[j-1]){
                     continue;
                 }
-                int index =search(sum-(nums[i]+nums[j]),nums);
-                if (index>j){
-                    lists.add(Arrays.asList(nums[i],nums[j],nums[index]));
+                for (int k=j+1;k<length;k++){
+                    if (k>j+1&&nums[k]==nums[k-1]){
+                        continue;
+                    }
+                    int searchNum=target-(nums[i]+nums[j]+nums[k]);
+                    int index =search(searchNum,nums);
+                    if (index>k){
+                        lists.add(Arrays.asList(nums[i],nums[j],nums[k],nums[index]));
+                    }
                 }
+
             }
         }
 
