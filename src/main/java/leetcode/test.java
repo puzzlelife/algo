@@ -8,11 +8,11 @@ import java.util.Arrays;
  */
 public class test {
     public static void main(String[] args) {
-        Question18 test=new Question18();
+        Question16 test=new Question16();
 
-        int[] nums=new int[]{0,1,5,0,1,5,5,-4};
+        int[] nums=new int[]{1,2,4,8,16,32,64,128};
 
 
-        System.out.println(test.fourSum(nums,11));
+        System.out.println(test.threeSumClosest(nums,82));
     }
 }
