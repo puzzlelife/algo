@@ -9,9 +9,9 @@ import java.util.List;
  */
 public class test {
     public static void main(String[] args) {
-        Question17 test=new Question17();
+        Question22 test=new Question22();
 
-        List<String> result=test.letterCombinations("23");
+        List<String> result=test.generateParenthesis(2);
         for (String s : result) {
             System.out.println(s);
         }

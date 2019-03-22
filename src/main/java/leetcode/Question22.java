@@ -22,8 +22,29 @@ import java.util.List;
 public class Question22 {
     public List<String> generateParenthesis(int n) {
         List<String> result=new ArrayList<>();
-
+        String temp="";
+        doBuildList(result,n,0,temp,0);
 
         return result;
     }
+
+    private void doBuildList(List<String> result, int n, int deep, String temp, int rightBrackets) {
+        if (deep==n){
+
+            while (rightBrackets>0){
+                temp+=")";
+                rightBrackets--;
+            }
+            result.add(temp);
+
+            return;
+        }
+        doBuildList(result,n,deep+1,temp+"(",rightBrackets+1);
+        if (rightBrackets>0){
+            doBuildList(result,n,deep,temp+")",rightBrackets-1);
+        }
+
+    }
+
+
 }
