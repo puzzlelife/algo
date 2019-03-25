@@ -9,11 +9,18 @@ import java.util.List;
  */
 public class test {
     public static void main(String[] args) {
-        Question22 test=new Question22();
+        Question24 test=new Question24();
+        Question24.ListNode head=new Question24.ListNode(1);
+        head.next=new Question24.ListNode(2);
+        head.next.next=new Question24.ListNode(3);
+        head.next.next.next=new Question24.ListNode(4);
 
-        List<String> result=test.generateParenthesis(2);
-        for (String s : result) {
-            System.out.println(s);
+
+
+        Question24.ListNode result =test.swapPairs(head);
+        while (result!=null){
+            System.out.println(result.val);
+            result=result.next;
         }
     }
 }
