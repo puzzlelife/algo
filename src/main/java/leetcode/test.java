@@ -1,7 +1,9 @@
 package leetcode;
 
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @Author: wangyaowy.wang
@@ -9,17 +11,22 @@ import java.util.List;
  */
 public class test {
     public static void main(String[] args) {
-        Question24 test=new Question24();
-        Question24.ListNode head=new Question24.ListNode(1);
-        head.next=new Question24.ListNode(2);
-        head.next.next=new Question24.ListNode(3);
-        head.next.next.next=new Question24.ListNode(4);
+        Question25 test=new Question25();
+        Question25.ListNode h1=new Question25.ListNode(1);
+        Question25.ListNode h2=new Question25.ListNode(2);
+//        Question25.ListNode h3=new Question25.ListNode(3);
+//        Question25.ListNode h4=new Question25.ListNode(4);
+//        Question25.ListNode h5=new Question25.ListNode(5);
+
+        h1.next=h2;
+//        h2.next=h3;
+//        h3.next=h4;
+//        h4.next=h5;
 
 
-
-        Question24.ListNode result =test.swapPairs(head);
+        Question25.ListNode result=test.reverseKGroup(h1,2);
         while (result!=null){
-            System.out.println(result.val);
+            System.out.print(result.val+" ");
             result=result.next;
         }
     }
