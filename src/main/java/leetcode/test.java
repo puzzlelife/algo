@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 public class test {
     public static void main(String[] args) {
-        Question26 test=new Question26();
-        System.out.println(test.removeDuplicates(new int[]{1,1,2}));
+        Question28 test=new Question28();
+        System.out.println(test.strStr(""," "));
     }
 }
