@@ -23,27 +23,28 @@ package leetcode;
 public class Question7 {
     public int reverse(int x) {
         String max=String.valueOf(Integer.MAX_VALUE);
-        boolean isNegative=false;
+
+        String value=String.valueOf(x);
+
+        StringBuilder reverseString=new StringBuilder();
+
         if (x<0){
-            isNegative=true;
-            x= -x;
-        }
-        String intValue=String.valueOf(x);
-        String reverseValue=new String();
-        for (int index=intValue.length()-1;index>=0;index--){
-            reverseValue+=intValue.charAt(index);
+            reverseString.append("-");
+            max=String.valueOf(Integer.MIN_VALUE);
+            value=value.substring(1);
         }
 
-        if (compare(reverseValue,max)>0){
+        for (int i=value.length()-1;i>=0;i--){
+            reverseString.append(value.charAt(i));
+        }
+
+        if (compare(reverseString.toString(),max)>0){
             return 0;
         }
 
-        if (isNegative){
-            reverseValue="-"+reverseValue;
-        }
-
-        return Integer.valueOf(reverseValue);
+        return Integer.valueOf(reverseString.toString());
     }
+
     private int compare(String a,String b) {
         if (a.length()>b.length()){
             return 1;
